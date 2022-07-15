@@ -27,30 +27,33 @@ def make_dict(keys, values):
 c = [1, 2, 3, 4]
 d = ['a', 'b', 'c']
 
+import itertools
+x = list(itertools.zip_longest(c, d, fillvalue = "N/A"))
+print(x) 
 
-def make_listtuple(list1, list2):
-    lst = []
-    for x in range(max(len(list1), len(list2))):
-        try:
-            a = list1[x]
-        except IndexError:
-            a = 'N/A'
-        try:
-            b = list2[x]
-        except IndexError:
-            b = 'N/A'
-        lst.append(tuple((a, b)))
-    return lst
-
-
+# или:
+# def make_listtuple(list1, list2):
+#     lst = []
+#     for x in range(max(len(list1), len(list2))):
+#         try:
+#             a = list1[x]
+#         except IndexError:
+#             a = 'N/A'
+#         try:
+#             b = list2[x]
+#         except IndexError:
+#             b = 'N/A'
+#         lst.append(tuple((a, b)))
+#     return lst
 # print(make_listtuple(c, d))
+
 
 
 # 16. Команда программистов пишет на Django форум по текстовым ролевым играм, опираясь на основные идеологические принципы Django.
 # В данный момент они думают, как реализовать логику сущности тем на форуме (топиков, тредов).
 # Какой, по вашему мнению, функционал будет реализован в коде моделей, а какой — в коде представлений?
 
-#хз
+# В коде моделей будут все данные, которые требуется где-то хранить, в коде представлений будут описана работа с данными.
 
 
 
